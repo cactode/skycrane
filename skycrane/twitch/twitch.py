@@ -17,7 +17,8 @@ class TwitchSocket():
         self.sock.send(bytes(text + "\r\n", "UTF-8"))
 
     def recv(self):
-        return str(self.sock.recv(1024))
+        return self.sock.recv(1024).decode("UTF-8")
 
     def recv_lines(self):
-        return self.recv().split("\\r\\n")
+        return [l for l in self.recv().split("\r\n")
+                if l.strip()]

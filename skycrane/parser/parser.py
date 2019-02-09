@@ -20,7 +20,7 @@ class TwitchParser():
         if len(command_value) == 2:
             try:
                 number = abs(int(command_value[1]))
-                value = max(number, MAX_MOVE)
+                value = min(number, MAX_MOVE)
             except Exception as e:
                 pass
 
