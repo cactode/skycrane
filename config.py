@@ -24,7 +24,7 @@ GRBL_CONFIG = [
 ]
 
 # hardware settings
-GRBL_PORT = "COM4"
+GRBL_PORT = "/dev/ttyACM0"
 GRBL_BAUD = 115200
 
 # command options
