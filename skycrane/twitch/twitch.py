@@ -1,15 +1,16 @@
+from config import HOST, PORT, NICK, PSWD
 import socket
 
 
 class TwitchSocket():
-    def __init__(self, host, port, nick, pswd):
+    def __init__(self):
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.sock.connect((host, port))
-        self.send("PASS " + pswd)
-        self.send("NICK " + nick)
-        self.send("JOIN #" + nick)
+        self.sock.connect((HOST, PORT))
+        self.send("PASS " + PSWD)
+        self.send("NICK " + NICK)
+        self.send("JOIN #" + NICK)
         self.send("Test post")
-        while self.recv() != "End of /NAMES list":
+        while "End of /NAMES list" not in self.recv():
             pass
 
     def send(self, text):
