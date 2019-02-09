@@ -25,7 +25,7 @@ GRBL_CONFIG = [
 
 # hardware settings
 GRBL_PORT = "/dev/serial"
-GRBL_BAUD = "9600"
+GRBL_BAUD = 115200
 
 # command options
 class Command(Enum):

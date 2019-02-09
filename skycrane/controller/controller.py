@@ -11,8 +11,8 @@ class TwitchController():
     def send(self, command):
         self.grbl.write((command + "\r\n").encode())
         # intentionally blocking to rate-limit
-        if self.grbl.readline() != "ok":
-            raise IOError("Grbl reported error!")
+        # if self.grbl.readline() != "ok":
+        #     raise IOError("Grbl reported error!")
 
     def do(self, command, value):
         if command == Command.LEFT:
