@@ -10,7 +10,7 @@ PSWD = 'oauth:xyntph447nqmfluodyiqrxtl5dkdlu'
 # grbl settings
 GRBL_CONFIG = [
     "$21=0",  # hard limits
-    "$24=1000",  # homing feed
+    "$24=6000",  # homing feed
     "$25=6000",  # homing seek
     "$100=0.314",  # x mm per step
     "$101=0.314",  # y mm per step
@@ -18,8 +18,8 @@ GRBL_CONFIG = [
     "$111=6000",  # y max speed
     "$120=100",  # x acceleration
     "$121=100",  # y acceleration
-    "$130=1000",  # x size
-    "$131=1000",  # y size
+    "$130=10000",  # x size
+    "$131=10000",  # y size
     "G91" # relative mode
 ]
 
