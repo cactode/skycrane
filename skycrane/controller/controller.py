@@ -32,7 +32,7 @@ class TwitchController():
     def pulse_motor(self, value):
         pulse_length = abs(value)/100
         pi = pigpio.pi()
-        pi.set_servo_pulsewidth(3, 500 if value < 0 else 2500)
+        pi.set_servo_pulsewidth(3, 1000 if value < 0 else 2000)
         Timer(pulse_length, self.turn_off_motor,
               kwargs={'pi': pi}).start()
 
